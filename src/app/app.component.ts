@@ -28,3 +28,4 @@ export class AppComponent implements OnInit {
 }
 
 // In course, the form is set up directly in ngOnInit. I have chosen to create a function to set up the form and then call this in ngOnInit instead because I believe it would make testing easier, and keep the code tidier if ngOnInit were to get busier.
+// In the course, the onSubmit function logs the entire form. I have chose to log the value of the form so that I can see the object more clearly.
