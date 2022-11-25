@@ -16,6 +16,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.setUpSignUpForm();
 
+    this.onSetValue();
+
+    this.onPatchValue();
+
     // this.onValueChanges();
 
     // this.onStatusChanges();
@@ -39,7 +43,8 @@ export class AppComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.signupForm.value)
+    console.log(this.signupForm.value);
+    this.signupForm.reset(this.setUpSignUpForm());
   }
 
   onAddHobby() {
@@ -61,6 +66,25 @@ export class AppComponent implements OnInit {
         console.log(status);
       }
     )
+  }
+
+  onSetValue() {
+    this.signupForm.setValue({
+      'userData': {
+        'username': "Jenny",
+        'email': "email@email.com"
+      },
+      'gender': "female",
+      'hobbies': []
+    })
+  }
+
+  onPatchValue() {
+    this.signupForm.patchValue({
+      'userData': {
+        'username': "Max",
+      },
+    })
   }
 
   // Validators
