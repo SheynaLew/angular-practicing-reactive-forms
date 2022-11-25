@@ -15,6 +15,10 @@ export class AppComponent implements OnInit {
   // lifecycle hooks
   ngOnInit() {
     this.setUpSignUpForm();
+
+    // this.onValueChanges();
+
+    // this.onStatusChanges();
   }
 
   // getters
@@ -41,6 +45,22 @@ export class AppComponent implements OnInit {
   onAddHobby() {
     const control = new FormControl(null, Validators.required);
     (<FormArray>this.signupForm.get('hobbies')).push(control);
+  }
+
+  onValueChanges() {
+    this.signupForm.valueChanges.subscribe(
+      (value) => {
+        console.log(value);
+      }
+    )
+  }
+
+  onStatusChanges() {
+    this.signupForm.statusChanges.subscribe(
+      (status) => {
+        console.log(status);
+      }
+    )
   }
 
   // Validators
