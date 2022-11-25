@@ -27,6 +27,10 @@ export class AppComponent implements OnInit {
   onSubmit() {
     console.log(this.signupForm.value)
   }
+
+  onAddHobby() {
+
+  }
 }
 
 // In course, the form is set up directly in ngOnInit. I have chosen to create a function to set up the form and then call this in ngOnInit instead because I believe it would make testing easier, and keep the code tidier if ngOnInit were to get busier.
